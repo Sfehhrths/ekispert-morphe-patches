@@ -18,7 +18,7 @@ Morphe Manager が入った端末で上のリンクを開くと、このリポ�
 ## パッチ一覧
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/Sfehhrths/ekispert-morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+> **[v1.0.1](https://github.com/Sfehhrths/ekispert-morphe-patches/releases/tag/v1.0.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
 <details open>
 <summary>📦 駅すぱあと&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
@@ -30,7 +30,7 @@ Morphe Manager が入った端末で上のリンクを開くと、このリポ�
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Response tap](#response-tap) | Copies Ekispert API responses (route search etc.) to the Wear OS companion app. Milestone 1: dumps them to logcat (tag EkispertTap). |  |
+| [Response tap](#response-tap) | Sends route search results, the course opened in the detail screen, MyClip courses and transfer-alarm courses to the Ekispert Wear companion app (dev.sfehhrths.ekispertwear) for display on a Wear OS watch. |  |
 
 </details>
 

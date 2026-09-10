@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/Sfehhrths/ekispert-morphe-patches/compare/v1.0.0...v1.0.1) (2026-09-10)
+
+### 🐛 Bug Fixes
+
+* describe the patch properly and stop dumping response bodies to logcat by default ([a70cc36](https://github.com/Sfehhrths/ekispert-morphe-patches/commit/a70cc366840d99917362420496956f3b5a246fd0))
+
 ## 1.0.0 (2026-09-10)
 
 ### 🐛 Bug Fixes
