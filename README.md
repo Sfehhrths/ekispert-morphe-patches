@@ -106,9 +106,7 @@ adb logcat -s EkispertTap
 
 ## 公式アプリが更新されたとき
 
-1. 新しい APK を jadx で開き、上の表のクラスが残っているか確認します。
-2. 変わっていれば `Fingerprints.kt` の `definingClass` や戻り値型を直します。メソッド名は使っていないので、メンバ名の難読化が変わっても影響しません。
-3. `Constants.kt` の `AppTarget(version = ...)` を更新します。
+[docs/UPDATING.md](docs/UPDATING.md) を参照してください。新しい APK の用意、`-f` での適用、動作確認、対応バージョンの更新とリリース、フィンガープリントが外れたときの直し方をまとめています。
 
 ## ライセンス
 
