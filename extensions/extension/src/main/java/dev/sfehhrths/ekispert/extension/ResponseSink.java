@@ -23,11 +23,11 @@ final class ResponseSink {
     private static final int LOG_CHUNK_CHARS = 1000;
 
     /**
-     * Milestone 1 (verification): dump the whole body to logcat.
-     * Production: set to {@code false}. The full body must then be logged only when the
-     * companion app fails to parse it (the companion owns parsing; the patch side stays dumb).
+     * Debugging aid: dump the whole body to logcat. Off for releases; flip to {@code true}
+     * when investigating parse problems on the companion side (the companion owns parsing;
+     * the patch side stays dumb).
      */
-    private static final boolean LOG_FULL_BODY = true;
+    private static final boolean LOG_FULL_BODY = false;
 
     private ResponseSink() {
     }

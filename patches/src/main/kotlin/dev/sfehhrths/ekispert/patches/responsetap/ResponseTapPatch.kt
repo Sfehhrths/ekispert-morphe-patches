@@ -14,8 +14,9 @@ import dev.sfehhrths.ekispert.patches.shared.Constants.EXTENSION_CLASS
 @Suppress("unused")
 val responseTapPatch = bytecodePatch(
     name = "Response tap",
-    description = "Copies Ekispert API responses (route search etc.) to the Wear OS companion app. " +
-            "Milestone 1: dumps them to logcat (tag EkispertTap).",
+    description = "Sends route search results, the course opened in the detail screen, " +
+            "MyClip courses and transfer-alarm courses to the Ekispert Wear companion app " +
+            "(dev.sfehhrths.ekispertwear) for display on a Wear OS watch.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_EKISPERT)

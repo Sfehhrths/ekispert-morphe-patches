@@ -102,7 +102,7 @@ adb logcat -s EkispertTap
 
 起動時に `application context captured` と `ResponseTapInterceptor installed`、経路検索後に `broadcast http_response ...`、詳細画面を開くと `broadcast selected_course index=...` が出ます。
 
-`ResponseSink.LOG_FULL_BODY` が `true` の間は応答本文を全文 logcat に出します。常用する場合は `false` にしてビルドし直してください。
+応答本文そのものを logcat に出したいときは `ResponseSink.LOG_FULL_BODY` を `true` にしてビルドし直してください（リリース版では `false`）。
 
 ## 公式アプリが更新されたとき
 
