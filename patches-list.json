@@ -1,5 +1,32 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "0.0.0",
-  "patches": []
+  "version": "1.0.0",
+  "patches": [
+    {
+      "name": "Response tap",
+      "description": "Copies Ekispert API responses (route search etc.) to the Wear OS companion app. Milestone 1: dumps them to logcat (tag EkispertTap).",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "jp.co.val.expert.android.aio",
+          "name": "駅すぱあと",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#00A5B5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "3.53.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    }
+  ]
 }

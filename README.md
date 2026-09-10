@@ -18,8 +18,21 @@ Morphe Manager が入った端末で上のリンクを開くと、このリポ�
 ## パッチ一覧
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0](https://github.com/Sfehhrths/ekispert-morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+<details open>
+<summary>📦 駅すぱあと&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
 
-（最初のリリースが作られると、ここに自動で一覧が入ります）
+**🎯 Supported versions:**
+
+| 3.53.0 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Response tap](#response-tap) | Copies Ekispert API responses (route search etc.) to the Wear OS companion app. Milestone 1: dumps them to logcat (tag EkispertTap). |  |
+
+</details>
 
 <!-- PATCHES_END -->
 
