@@ -32,7 +32,25 @@ java -jar APKEditor-1.4.9.jar m -i ekispert-splits -o ekispert-merged.apk
 
 マージ後の APK は元の署名が無効になっていますが、パッチ適用時に署名し直すので問題ありません。
 
-すでにパッチ版が入っている端末からは元の APK は取れません。その場合は別の端末か、APKMirror などから同じバージョンの APKM を入手します。
+すでにパッチ版が入っている端末からは元の APK は取れません（Play ストアからの更新もできません）。その場合は別の端末か、APKMirror などから同じバージョンの APKM、または APKPure などから XAPK を入手します。
+
+### XAPK / APKM から作る（Morphe CLI を使う場合）
+
+XAPK・APKM は中身が split APK の zip です。展開して APK だけを 1 つのフォルダに集め、同じようにマージします。
+
+```bash
+mkdir ekispert-splits
+unzip Ekispert_X.Y.Z.xapk '*.apk' -d ekispert-splits
+java -jar APKEditor-1.4.9.jar m -i ekispert-splits -o ekispert-merged.apk
+```
+
+- 第三者のサイトから入手したものは、マージ前に公式の署名であることを確認します。すべての APK が `O=Val Laboratory Corporation` の証明書で署名されていれば本物です。
+
+  ```bash
+  apksigner verify --print-certs ekispert-splits/*.apk
+  ```
+
+- 配布物によっては画面密度の split が `config.mdpi` しか入っていないことがあります。動作には影響しませんが、高密度の端末では一部のアイコンが少しぼやけます。気になる場合は全密度入りの APKM を使います。
 
 ### APKM を使う（Morphe Manager を使う場合）
 
@@ -43,7 +61,8 @@ Manager は APKM をそのまま入力にできます。マージは不要です
 ```bash
 java -jar morphe-desktop-<version>-all.jar patch \
   -p patches-<version>.mpp \
-  --keystore ekispert-wear.keystore \
+  --keystore <前回と同じ鍵>.keystore \
+  --keystore-entry-alias <alias> --keystore-entry-password <password> \
   -f \
   -o ekispert-patched.apk \
   ekispert-merged.apk
@@ -59,6 +78,8 @@ Manager の場合は、パッチ一覧の警告（対応バージョン外）を
 
 - パッチ済み APK は `--keystore` で渡した鍵で署名されます。**前回と同じ鍵**なら `adb install -r` で上書きでき、ログインや保存データは残ります。
 - 鍵を変えると（CLI ↔ Manager の切り替えも含む）署名が変わり、一度アンインストールが必要になります。
+- Manager でインストールしたものを CLI で更新する場合は、Manager の設定からエクスポートした keystore（alias `Morphe`）を使えば同じ署名になります。
+- インストール前に `apksigner verify --print-certs ekispert-patched.apk` の SHA-256 が、端末に入っている版と一致することを確認します。
 - 鍵ファイルはリポジトリに入れません。各自で保管してください。
 
 ## 3. 動作を確認する
@@ -162,7 +183,7 @@ java -jar APKEditor-1.4.9.jar d -i ekispert-merged.apk -o ekispert-smali
 
 ## チェックリスト
 
-- [ ] 新しい APK（マージ済み or APKM）を用意した
+- [ ] 新しい APK（マージ済み or APKM）を用意し、公式の署名であることを確認した
 - [ ] `-f` で当てて `Applied: Response tap` が出た
 - [ ] logcat で 8 種類のログ（表）を確認した
 - [ ] コンパニオンで `data item put` まで出た
