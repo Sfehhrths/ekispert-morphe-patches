@@ -13,6 +13,8 @@ object Constants {
         apkFileType = ApkFileType.APK,
         appIconColor = 0x00A5B5,
         targets = listOf(
+            // Verified on device with the unchanged fingerprints (versionCode 296).
+            AppTarget(version = "3.53.1"),
             // Version the fingerprints were written against (versionCode 295).
             AppTarget(version = "3.53.0"),
         ),
