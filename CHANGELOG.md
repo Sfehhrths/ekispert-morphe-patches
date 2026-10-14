@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/Sfehhrths/ekispert-morphe-patches/compare/v1.1.0...v1.1.1) (2026-10-14)
+
+### 🚀 Updated App Support
+
+* 駅すぱあと 3.53.1 に対応 ([f6c982e](https://github.com/Sfehhrths/ekispert-morphe-patches/commit/f6c982e8c5ab2b776b2617cae0e098e8a9fe01bb))
+
 ## [1.1.0](https://github.com/Sfehhrths/ekispert-morphe-patches/compare/v1.0.1...v1.1.0) (2026-09-14)
 
 ### ✨ New Features
